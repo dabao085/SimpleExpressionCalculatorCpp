@@ -2,10 +2,10 @@
 使用类的继承
 
 ## 输入(input)  
-用空格分割每个字符(Seperate every character with space)
+用空格分割每个字符(Seperate every character with space)  
 `2 * 5 + 1`
 ## 输出(output)  
 `2 * 5 + 1 = 11`
 
 ## 示例  
-![效果示意图](https://https://github.com/dabao085/SimpleExpressionCalculatorCpp/raw/master/Image/example.png)  
+![效果示意图(demo)](https://github.com/dabao085/SimpleExpressionCalculatorCpp/blob/master/Image/example.png)  
