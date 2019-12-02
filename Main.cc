@@ -63,10 +63,10 @@ Node buildExpression(queue<string>& expressions)
         }
     }
 
-    for(auto & a: all_nodes)
-    {
-        cout << a << endl;
-    }
+    // for(auto & a: all_nodes)
+    // {
+    //     cout << a << endl;
+    // }
 
     //step 1. 处理*/运算符
     for(size_t index = 0; index != opers.size(); ++index)
@@ -77,7 +77,7 @@ Node buildExpression(queue<string>& expressions)
             {
                 Node newnode = all_nodes[index] * all_nodes[index + 1];
                 all_nodes.erase(all_nodes.begin() + index, all_nodes.begin() + index + 2);
-                cout << "newnode: " << newnode << endl;
+                // cout << "newnode: " << newnode << endl;
                 all_nodes.insert(all_nodes.begin() + index, newnode);
 
                 opers.erase(opers.begin() + index);
@@ -88,7 +88,7 @@ Node buildExpression(queue<string>& expressions)
             {
                 Node newnode = all_nodes[index] / all_nodes[index + 1];
                 all_nodes.erase(all_nodes.begin() + index, all_nodes.begin() + index + 2);
-                cout << "newnode: " << newnode << endl;
+                // cout << "newnode: " << newnode << endl;
                 all_nodes.insert(all_nodes.begin() + index, newnode);
 
                 opers.erase(opers.begin() + index);
@@ -97,32 +97,32 @@ Node buildExpression(queue<string>& expressions)
             }
         }
     }
-    cout << "print all node after */: " << endl;
-    for(auto & a : all_nodes)
-    {
-        cout << a << " : " << a.caculate() << endl;
-    }
-    cout << endl;
+    // cout << "print all node after */: " << endl;
+    // for(auto & a : all_nodes)
+    // {
+    //     cout << a << " : " << a.caculate() << endl;
+    // }
+    // cout << endl;
 
     //step 2. 处理+-运算符
     Node finalNode = all_nodes[0];
-    cout << "finalNode: " << finalNode << endl;
-    cout << endl;
+    // cout << "finalNode: " << finalNode << endl;
+    // cout << endl;
     size_t node_index = 0;
     for(size_t oper_index = 0; oper_index != opers.size(); ++oper_index)
     {
         node_index = oper_index + 1;
         if(opers[oper_index] == "+")
         {
-            cout << "finalNode: " << finalNode << endl;
-            cout << "all_nodes[node_index + 1]: " << all_nodes[node_index] << endl;
+            // cout << "finalNode: " << finalNode << endl;
+            // cout << "all_nodes[node_index + 1]: " << all_nodes[node_index] << endl;
             finalNode = finalNode + all_nodes[node_index];
-            cout << "finalNode: " << finalNode << endl;
+            // cout << "finalNode: " << finalNode << endl;
         }
         if(opers[oper_index] == "-")
         {
             finalNode = finalNode - all_nodes[node_index];
-            cout << "finalNode: " << finalNode << endl;
+            // cout << "finalNode: " << finalNode << endl;
         }
     }
 
