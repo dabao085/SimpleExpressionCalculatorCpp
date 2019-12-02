@@ -2,10 +2,10 @@
 #include "BinaryNode.h"
 using namespace std;
 
-ostream& operator<<(ostream& os, const Node& node)
-{
-    return os << node.rep();
-}
+// ostream& operator<<(ostream& os, const Node& node)
+// {
+//     return os << node.rep();
+// }
 
 Node operator+(const Node& lhs, const Node& rhs)
 {
