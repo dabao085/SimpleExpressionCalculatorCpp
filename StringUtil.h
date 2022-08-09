@@ -3,14 +3,12 @@
 
 #include <string>
 
-namespace StringUtil
-{
+namespace StringUtil {
 
-inline void rtrimChar(std::string& str, char ch)
-{
+  inline void rtrimChar(std::string& str, char ch) {
     str.erase(str.find_last_not_of(ch) + 1);
-}
+  }
 
-}
+}// namespace StringUtil
 
 #endif
