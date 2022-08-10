@@ -20,10 +20,10 @@ private:
 class NumberNode : public NodeBase {
   friend class Node;
 
-private:// have to be private?
+private: // have to be private?
   NumberNode(double value) : value_(value) {}
   double calculate() const override { return value_; }
-  std::string rep() const override {//return std::to_string(value_);
+  std::string rep() const override { //return std::to_string(value_);
     std::string result(std::to_string(value_));
     StringUtil::rtrimChar(result, '0');
     StringUtil::rtrimChar(result, '.');
@@ -34,10 +34,6 @@ private:
   double value_;
 };
 
-typedef struct Result_ {
-  double result_;
-} Result;
-
 // 描述node的结构体, node默认采用double类型。
 class Node {
   friend Node operator+(const Node&, const Node&);
@@ -46,12 +42,12 @@ class Node {
   friend Node operator/(const Node&, const Node&);
 
 public:
-  Node(double value) : node_(new NumberNode(value)) {}
-  double caculate() const { return node_->calculate(); }
+  Node(double value) : node_(std::make_shared<NumberNode>(value)) {}
+  double calculate() const { return node_->calculate(); }
   std::string rep() const { return node_->rep(); }
 
 private:
-  Node(std::shared_ptr<NodeBase> node) : node_(node) {}
+  Node(const std::shared_ptr<NodeBase>& node) : node_(node) {}
   std::shared_ptr<NodeBase> node_;
 };
 

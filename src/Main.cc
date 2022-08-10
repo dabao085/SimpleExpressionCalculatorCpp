@@ -38,7 +38,7 @@ Node buildExpression(queue<string>& expressions) {
     all_nodes.push_back(node);
     --size;
 
-    if (size == 0)// 处理完成
+    if (size == 0) // 处理完成
     {
       break;
     } else {
@@ -65,8 +65,8 @@ Node buildExpression(queue<string>& expressions) {
         all_nodes.insert(all_nodes.begin() + index, newnode);
 
         opers.erase(opers.begin() + index);
-        index = 0;// 重置index
-        continue; // 由于all_nodes和opers都变化了，所以要退出。
+        index = 0; // 重置index
+        continue;  // 由于all_nodes和opers都变化了，所以要退出。
       }
       if (opers[index] == "/") {
         Node newnode = all_nodes[index] / all_nodes[index + 1];
@@ -76,15 +76,15 @@ Node buildExpression(queue<string>& expressions) {
         all_nodes.insert(all_nodes.begin() + index, newnode);
 
         opers.erase(opers.begin() + index);
-        index = 0;// 重置index
-        continue; // 由于all_nodes和opers都变化了，所以要退出。
+        index = 0; // 重置index
+        continue;  // 由于all_nodes和opers都变化了，所以要退出。
       }
     }
   }
   // cout << "print all node after */: " << endl;
   // for(auto & a : all_nodes)
   // {
-  //     cout << a << " : " << a.caculate() << endl;
+  //     cout << a << " : " << a.calculate() << endl;
   // }
   // cout << endl;
 
@@ -121,7 +121,7 @@ int main() {
   // Node node1 = Node(3) * Node(5);
   // Node node(2);
   // node = node + node1;
-  cout << node.rep() << " = " << node.caculate() << endl;
+  cout << node.rep() << " = " << node.calculate() << endl;
 
   return 0;
 }
