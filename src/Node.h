@@ -8,11 +8,11 @@
 class NodeBase {
   friend class Node;
 
-  public:
+public:
   NodeBase() = default;
   virtual ~NodeBase() = default;
 
-  private:
+private:
   virtual double calculate() const = 0;
   virtual std::string rep() const = 0;
 };
@@ -20,7 +20,7 @@ class NodeBase {
 class NumberNode : public NodeBase {
   friend class Node;
 
-  private:// have to be private?
+private:// have to be private?
   NumberNode(double value) : value_(value) {}
   double calculate() const override { return value_; }
   std::string rep() const override {//return std::to_string(value_);
@@ -30,7 +30,7 @@ class NumberNode : public NodeBase {
     return result;
   }
 
-  private:
+private:
   double value_;
 };
 
@@ -45,12 +45,12 @@ class Node {
   friend Node operator*(const Node&, const Node&);
   friend Node operator/(const Node&, const Node&);
 
-  public:
+public:
   Node(double value) : node_(new NumberNode(value)) {}
   double caculate() const { return node_->calculate(); }
   std::string rep() const { return node_->rep(); }
 
-  private:
+private:
   Node(std::shared_ptr<NodeBase> node) : node_(node) {}
   std::shared_ptr<NodeBase> node_;
 };

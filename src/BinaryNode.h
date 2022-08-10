@@ -12,7 +12,7 @@
 // };
 
 class BinaryNode : public NodeBase {
-  protected:// have to be protected?
+protected:// have to be protected?
   BinaryNode(const Node& lhs, const Node& rhs, const std::string& oper)
       : lhs_(lhs), rhs_(rhs), oper_(oper) {}
   std::string rep() const override {
