@@ -1,8 +1,7 @@
+#include "base/logging.h"
 #include "binary_node.h"
+#include "gflags/gflags.h"
 #include <iostream>
-#include <list>
-#include <queue>
-#include <sstream>
 
 using namespace std;
 
@@ -96,7 +95,15 @@ Node buildExpression(queue<string>& expressions) {
   return finalNode;
 }
 
-int main() {
+// log configuration
+DEFINE_int32(max_log_files, 3,
+             "Maximum number of log files to retain per severity "
+             "level. The most recent log files are retained. If set to 0, all "
+             "log files are retained.");
+
+int main(int argc, char* argv[]) {
+  gflags::ParseCommandLineFlags(&argc, &argv, true);
+  base::InitGlogSafe(argv[0], false);
   string input;
   getline(cin, input);
 
@@ -105,10 +112,9 @@ int main() {
 
   Node node = buildExpression(expression);
 
-  // Node node1 = Node(3) * Node(5);
-  // Node node(2);
-  // node = node + node1;
   cout << node.rep() << " = " << node.calculate() << endl;
+  LOG(ERROR) << node.rep() << " = " << node.calculate();
 
+  base::ShutdownGlogSafe();
   return 0;
 }

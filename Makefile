@@ -6,14 +6,14 @@ else
 	CXXFLAGS += -O3 -DNDEBUG
 endif
 OBJS = $(patsubst %.cc,%.o,$(shell ls src/*.cc))
-#OBJS += $(patsubst %.cc,%.o,$(shell ls src/proto/*.cc))
+OBJS += $(patsubst %.cc,%.o,$(shell ls src/base/*.cc))
 
 TARGET = calculator
-#CXXLDFLAGS = -Lthird_party/3rdlib \
-#             -Wl,-rpath=third_party/3rdlib
+CXXLDFLAGS = -Lthird_party/3rdlib \
+             -Wl,-rpath=third_party/3rdlib
 
-INCLUDE = -Isrc
-#LIBS = -lmuduo_net -lmuduo_base -lgflags -lpthread
+INCLUDE = -Isrc -Ithird_party
+LIBS = -lglog -lgflags -lpthread -lunwind
 
 all:$(TARGET)
 $(TARGET):$(OBJS)
