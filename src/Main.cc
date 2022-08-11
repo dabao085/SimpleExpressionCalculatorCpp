@@ -1,10 +1,9 @@
-#include "BinaryNode.h"
+#include "binary_node.h"
 #include <iostream>
 #include <list>
 #include <queue>
 #include <sstream>
-#include <string>
-#include <vector>
+
 using namespace std;
 
 ostream& operator<<(ostream& os, const Node& node) { return os << node.rep(); }

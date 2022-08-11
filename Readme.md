@@ -8,4 +8,4 @@
 `2 * 5 + 1 = 11`
 
 ## 示例  
-![效果示意图(demo)](https://github.com/dabao085/SimpleExpressionCalculatorCpp/blob/master/Image/example.png)  
+![效果示意图(demo)](https://github.com/dabao085/SimpleExpressionCalculatorCpp/blob/master/image/example.png)  

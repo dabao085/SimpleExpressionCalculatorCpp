@@ -1,7 +1,7 @@
 #ifndef _EXP_CAL_NODE_H_
 #define _EXP_CAL_NODE_H_
 
-#include "StringUtil.h"
+#include "string_util.h"
 #include <memory>
 #include <stdio.h>
 

@@ -1,7 +1,7 @@
 #ifndef _EXP_CAL_BINARY_NODE_H_
 #define _EXP_CAL_BINARY_NODE_H_
 
-#include "Node.h"
+#include "node.h"
 
 // enum CALTYPE
 // {

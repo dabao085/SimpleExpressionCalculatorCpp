@@ -1,5 +1,5 @@
-#include "Node.h"
-#include "BinaryNode.h"
+#include "node.h"
+#include "binary_node.h"
 using namespace std;
 
 // ostream& operator<<(ostream& os, const Node& node)
