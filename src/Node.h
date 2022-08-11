@@ -42,7 +42,7 @@ class Node {
   friend Node operator/(const Node&, const Node&);
 
 public:
-  Node(double value) : node_(std::make_shared<NumberNode>(value)) {}
+  Node(double value) : node_(new NumberNode(value)) {}
   double calculate() const { return node_->calculate(); }
   std::string rep() const { return node_->rep(); }
 
