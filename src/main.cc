@@ -8,19 +8,6 @@ using namespace std;
 
 ostream& operator<<(ostream& os, const Node& node) { return os << node.rep(); }
 
-queue<string> splitInputString(string& inputString) {
-  if (inputString.empty()) {
-    queue<string> emptyVec;
-    return emptyVec;
-  } else {
-    queue<string> expressions;
-    istringstream is(inputString);
-    string numOrOper;
-    while (is >> numOrOper) { expressions.push(numOrOper); }
-    return expressions;
-  }
-}
-
 // 暂时只分两种优先级，高优先级为*/，低优先级为+-，暂不提供括号()功能。
 // 未检查表达式是否错误、无解。
 // NOTE: 性能较差!
@@ -114,7 +101,8 @@ int main() {
   getline(cin, input);
 
   queue<string> expression;
-  expression = splitInputString(input);
+  expression = StringUtil::SplitNumAndSign(input);
+
   Node node = buildExpression(expression);
 
   // Node node1 = Node(3) * Node(5);

@@ -1,6 +1,8 @@
 #ifndef _EC_STRING_UTIL_H_
 #define _EC_STRING_UTIL_H_
 
+#include <algorithm>
+#include <queue>
 #include <string>
 
 namespace StringUtil {
@@ -9,6 +11,8 @@ namespace StringUtil {
     str.erase(str.find_last_not_of(ch) + 1);
   }
 
-}// namespace StringUtil
+  std::queue<std::string> SplitNumAndSign(const std::string& expression);
+
+} // namespace StringUtil
 
 #endif
