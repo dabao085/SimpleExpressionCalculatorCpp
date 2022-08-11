@@ -5,7 +5,7 @@ project(SimpleExpressionCalculator)
 
 include_directories("${PROJECT_SOURCE_DIR}/src")
 
-link_directories("${PROJECT_SOURCE_DIR}/third_party/3rdlib")
+#link_directories("${PROJECT_SOURCE_DIR}/third_party/3rdlib")
 
 aux_source_directory(./src SRCS)
 
