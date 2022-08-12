@@ -1,3 +1,0 @@
-/root/project/SimpleExpressionCalculatorCpp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/root/project/SimpleExpressionCalculatorCpp/cmake-build-debug/CMakeFiles/edit_cache.dir
-/root/project/SimpleExpressionCalculatorCpp/cmake-build-debug/CMakeFiles/calculator.dir
