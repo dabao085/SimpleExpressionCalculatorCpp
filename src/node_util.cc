@@ -30,7 +30,7 @@ namespace nodeutil {
     }
 
     // step 1. 处理*/运算符
-    for (size_t index = 0; index != opers.size(); ++index) {
+    for (size_t index = 0; index != opers.size();) {
       if (opers[index] == "*" || opers[index] == "/") {
         Node new_node;
         if (opers[index] == "*") {
@@ -46,6 +46,8 @@ namespace nodeutil {
         opers.erase(opers.begin() + index);
         index = 0; // 重置index
         continue;  // 由于all_nodes和opers都变化了，所以要退出。
+      } else {
+        ++index;
       }
     }
 
