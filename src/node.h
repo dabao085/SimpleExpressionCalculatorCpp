@@ -42,6 +42,7 @@ class Node {
   friend Node operator/(const Node&, const Node&);
 
 public:
+  Node() : node_(new NumberNode(0)) {}
   Node(double value) : node_(new NumberNode(value)) {}
   double calculate() const { return node_->calculate(); }
   std::string rep() const { return node_->rep(); }

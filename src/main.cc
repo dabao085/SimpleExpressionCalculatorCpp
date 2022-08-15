@@ -24,10 +24,10 @@ int main(int argc, char* argv[]) {
   queue<string> expression;
   expression = StringUtil::SplitNumAndSign(input);
 
-  Node node = nodeutil::buildExpression(expression);
+  Node root_node = nodeutil::buildExpression(expression);
 
-  cout << node.rep() << " = " << node.calculate() << endl;
-  LOG(ERROR) << node.rep() << " = " << node.calculate();
+  cout << root_node.rep() << " = " << root_node.calculate() << endl;
+  LOG(ERROR) << root_node.rep() << " = " << root_node.calculate();
 
   base::ShutdownGlogSafe();
   return 0;
