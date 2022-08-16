@@ -10,6 +10,20 @@ namespace nodeutil {
     vector<string> opers;
 
     // parse expressions
+    parseExpression(expressions, all_nodes, opers);
+
+    // step 1. 处理*/运算符
+    processMulAndDiv(all_nodes, opers);
+
+    // step 2. 处理+-运算符
+    Node root_node = processAddAndMinus(all_nodes, opers);
+
+    return root_node;
+  }
+
+  void parseExpression(std::queue<std::string>& expressions,
+                       std::vector<Node>& all_nodes,
+                       std::vector<std::string>& opers) {
     size_t size = expressions.size();
     while (size != 0) {
       double value = stod(expressions.front());
@@ -28,8 +42,10 @@ namespace nodeutil {
         --size;
       }
     }
+  }
 
-    // step 1. 处理*/运算符
+  void processMulAndDiv(std::vector<Node>& all_nodes,
+                        std::vector<std::string>& opers) {
     for (size_t index = 0; index != opers.size();) {
       if (opers[index] == "*" || opers[index] == "/") {
         Node new_node;
@@ -50,8 +66,10 @@ namespace nodeutil {
         ++index;
       }
     }
+  }
 
-    // step 2. 处理+-运算符
+  Node processAddAndMinus(std::vector<Node>& all_nodes,
+                          std::vector<std::string>& opers) {
     Node root_node = all_nodes[0];
     size_t node_index = 0;
 
